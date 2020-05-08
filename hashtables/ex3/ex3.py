@@ -4,7 +4,30 @@ def intersection(arrays):
     YOUR CODE HERE
     """
 
-    return result
+    cache = {}
+
+    big_array = []
+    return_array = []
+
+    for x in arrays:
+        big_array +=x
+
+    # print(big_array)
+
+    for y in big_array:
+        if y not in cache:
+            cache[y] = 1
+        else:
+            cache[y] +=1
+
+    # print(cache)
+
+    for i in cache:
+        if cache[i] >1:
+            return_array.append(i)
+
+    return return_array
+
 
 
 if __name__ == "__main__":
