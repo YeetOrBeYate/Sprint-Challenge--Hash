@@ -6,6 +6,8 @@ def finder(files, queries):
 
     cache = {}
 
+    return_array = []
+
     for x in files:
        y = x.split("/")
        if y[-1] not in cache:
@@ -13,7 +15,13 @@ def finder(files, queries):
        else:
            cache[y[-1]].append(x) 
             
-    print(cache)
+    # print(cache)
+
+    for y in queries:
+        if y in cache:
+            return_array +=cache[y]
+
+    return return_array
      
 
 
